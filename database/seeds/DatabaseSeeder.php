@@ -125,15 +125,15 @@ class SpeciesPhotoSeeder extends Seeder {
 
         $speciesphoto1 = SpeciesPhoto::create(array(
 		'SpeciesId'          => $species->id,
-		'ThumbnailLocation'  => '/images/thumbs/species-1.jpg',
-		'PhotoLocation'      => '/images/species-1.jpg',
+		'ThumbnailLocation'  => 'images/thumbs/species-1.jpg',
+		'PhotoLocation'      => 'images/species-1.jpg',
 		'IsDefault'          => True
         ));
 
         $speciesphoto2 = SpeciesPhoto::create(array(
 		'SpeciesId'          => $species->id,
-		'ThumbnailLocation'  => '/images/thumbs/species-1.jpg',
-		'PhotoLocation'      => '/images/species-1.jpg',
+		'ThumbnailLocation'  => 'images/thumbs/species-1.jpg',
+		'PhotoLocation'      => 'images/species-1.jpg',
 		'IsDefault'          => False
         ));
 	}
