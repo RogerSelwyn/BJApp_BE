@@ -88,7 +88,7 @@ class SpeciesSeeder extends Seeder {
 		'AliasName'          => 'Sea Gull',
 		'Gender'             => 'Male',
 		'Colouring'          => 'Greyish',
-		'MigratoryPattern'   => 'All over',
+		'MigratoryPattern'   => 'All over the place',
 		'Description'        => 'Lorem Ipsum'
         ));
 
