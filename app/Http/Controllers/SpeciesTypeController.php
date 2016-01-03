@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\SpeciesType;
+use App\Models\Species;
 use App\Models\SpeciesPhoto;
 
 class SpeciesTypeController extends Controller
@@ -60,21 +61,26 @@ class SpeciesTypeController extends Controller
     {
 	        //  GET  /speciestype/1
         $speciestype = SpeciesType::where('id',$id)
-			->with('Species')
-			->first();
-			
+			->first()
+			->species()
+			->with('speciestype')
+			->with(array('speciesphotos' => function($query) {
+				$query->where('IsDefault', 1);
+				}))
+			->get();
+
 		$species = [];
-		foreach($speciestype->species as $speciesone) {
-			$speciesphoto = SpeciesPhoto::where('SpeciesId',$speciesone->id)
-				->where('IsDefault',1)
-				->first();
-				
-			if ($speciesphoto != null) {
+		foreach($speciestype as $speciesone) {
+			$thumbnail = '';
+			foreach($speciesone->speciesphotos as $speciesphoto) {
+				$thumbnail = $speciesphoto->ThumbnailLocation;
+			};	
+			if ($thumbnail != '') {
 				$species[] = [
 					'id' 		 		=> $speciesone->id,
 					'CommonName' 		=> $speciesone->CommonName,
 					'LatinName' 		=> $speciesone->LatinName,
-					'ThumbnailLocation' => $speciesphoto->ThumbnailLocation,
+					'ThumbnailLocation' => $thumbnail,
 				];
 			} else{
 				$species[] = [
@@ -83,11 +89,9 @@ class SpeciesTypeController extends Controller
 					'LatinName' 		=> $speciesone->LatinName,
 				];
 			};
-		};
-		
+		};	
 		$speciestypeout = [
-			'id'				=> $speciestype->id,
-			'SpeciesTypeName'	=> $speciestype->SpeciesTypeName,
+			'id'				=> $id,
 			'species'			=> $species,
 		];
 		return $speciestypeout;
