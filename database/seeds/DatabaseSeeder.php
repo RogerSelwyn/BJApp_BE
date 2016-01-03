@@ -103,6 +103,105 @@ class SpeciesSeeder extends Seeder {
 		'Description'        => 'Lorem Ipsum'
         ));
 
+        $speciesGull = Species::create(array(
+		'SpeciesTypeId'      => $speciesType->id,
+		'CommonName'         => 'Tern2',
+		'LatinName'          => 'Ternii',
+		'AliasName'          => 'Sea Tern',
+		'Gender'             => 'Male',
+		'Colouring'          => 'Greyish',
+		'MigratoryPattern'   => 'All over',
+		'Description'        => 'Lorem Ipsum'
+        ));
+
+        $speciesGull = Species::create(array(
+		'SpeciesTypeId'      => $speciesType->id,
+		'CommonName'         => 'Tern3',
+		'LatinName'          => 'Ternii',
+		'AliasName'          => 'Sea Tern',
+		'Gender'             => 'Male',
+		'Colouring'          => 'Greyish',
+		'MigratoryPattern'   => 'All over',
+		'Description'        => 'Lorem Ipsum'
+        ));
+
+        $speciesGull = Species::create(array(
+		'SpeciesTypeId'      => $speciesType->id,
+		'CommonName'         => 'Tern4',
+		'LatinName'          => 'Ternii',
+		'AliasName'          => 'Sea Tern',
+		'Gender'             => 'Male',
+		'Colouring'          => 'Greyish',
+		'MigratoryPattern'   => 'All over',
+		'Description'        => 'Lorem Ipsum'
+        ));
+
+        $speciesGull = Species::create(array(
+		'SpeciesTypeId'      => $speciesType->id,
+		'CommonName'         => 'Tern5',
+		'LatinName'          => 'Ternii',
+		'AliasName'          => 'Sea Tern',
+		'Gender'             => 'Male',
+		'Colouring'          => 'Greyish',
+		'MigratoryPattern'   => 'All over',
+		'Description'        => 'Lorem Ipsum'
+        ));
+
+        $speciesGull = Species::create(array(
+		'SpeciesTypeId'      => $speciesType->id,
+		'CommonName'         => 'Tern6',
+		'LatinName'          => 'Ternii',
+		'AliasName'          => 'Sea Tern',
+		'Gender'             => 'Male',
+		'Colouring'          => 'Greyish',
+		'MigratoryPattern'   => 'All over',
+		'Description'        => 'Lorem Ipsum'
+        ));
+
+        $speciesGull = Species::create(array(
+		'SpeciesTypeId'      => $speciesType->id,
+		'CommonName'         => 'Tern7',
+		'LatinName'          => 'Ternii',
+		'AliasName'          => 'Sea Tern',
+		'Gender'             => 'Male',
+		'Colouring'          => 'Greyish',
+		'MigratoryPattern'   => 'All over',
+		'Description'        => 'Lorem Ipsum'
+        ));
+
+        $speciesGull = Species::create(array(
+		'SpeciesTypeId'      => $speciesType->id,
+		'CommonName'         => 'Tern8',
+		'LatinName'          => 'Ternii',
+		'AliasName'          => 'Sea Tern',
+		'Gender'             => 'Male',
+		'Colouring'          => 'Greyish',
+		'MigratoryPattern'   => 'All over',
+		'Description'        => 'Lorem Ipsum'
+        ));
+
+        $speciesGull = Species::create(array(
+		'SpeciesTypeId'      => $speciesType->id,
+		'CommonName'         => 'Tern9',
+		'LatinName'          => 'Ternii',
+		'AliasName'          => 'Sea Tern',
+		'Gender'             => 'Male',
+		'Colouring'          => 'Greyish',
+		'MigratoryPattern'   => 'All over',
+		'Description'        => 'Lorem Ipsum'
+        ));
+
+        $speciesGull = Species::create(array(
+		'SpeciesTypeId'      => $speciesType->id,
+		'CommonName'         => 'Tern10',
+		'LatinName'          => 'Ternii',
+		'AliasName'          => 'Sea Tern',
+		'Gender'             => 'Male',
+		'Colouring'          => 'Greyish',
+		'MigratoryPattern'   => 'All over',
+		'Description'        => 'Lorem Ipsum'
+        ));
+
         $speciesType = SpeciesType::where('SpeciesTypeName', '=', 'Fish')->first();
 
         $speciesSeaHare = Species::create(array(
