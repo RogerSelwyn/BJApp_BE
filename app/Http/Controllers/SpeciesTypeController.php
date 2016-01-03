@@ -63,7 +63,6 @@ class SpeciesTypeController extends Controller
         $speciestype = SpeciesType::where('id',$id)
 			->first()
 			->species()
-			->with('speciestype')
 			->with(array('speciesphotos' => function($query) {
 				$query->where('IsDefault', 1);
 				}))
@@ -80,6 +79,11 @@ class SpeciesTypeController extends Controller
 					'id' 		 		=> $speciesone->id,
 					'CommonName' 		=> $speciesone->CommonName,
 					'LatinName' 		=> $speciesone->LatinName,
+					'AliasName' 		=> $speciesone->AliasName,
+					'Gender'	 		=> $speciesone->Gender,
+					'Colouring' 		=> $speciesone->Colouring,
+					'MigratoryPattern' 	=> $speciesone->MigratoryPattern,
+					'Description' 		=> $speciesone->Description,
 					'ThumbnailLocation' => $thumbnail,
 				];
 			} else{
@@ -87,6 +91,11 @@ class SpeciesTypeController extends Controller
 					'id' 		 		=> $speciesone->id,
 					'CommonName' 		=> $speciesone->CommonName,
 					'LatinName' 		=> $speciesone->LatinName,
+					'AliasName' 		=> $speciesone->AliasName,
+					'Gender'	 		=> $speciesone->Gender,
+					'Colouring' 		=> $speciesone->Colouring,
+					'MigratoryPattern' 	=> $speciesone->MigratoryPattern,
+					'Description' 		=> $speciesone->Description,
 				];
 			};
 		};	
