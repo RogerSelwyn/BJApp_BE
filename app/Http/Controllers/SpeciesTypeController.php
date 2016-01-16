@@ -60,7 +60,7 @@ class SpeciesTypeController extends Controller
     public function show($id)
     {
 	        //  GET  /speciestype/1
-        $speciestype = SpeciesType::where('id',$id)
+        $specieslist = SpeciesType::where('id',$id)
 			->first()
 			->species()
 			->with(array('speciesphotos' => function($query) {
@@ -69,7 +69,7 @@ class SpeciesTypeController extends Controller
 			->get();
 
 		$species = [];
-		foreach($speciestype as $speciesone) {
+		foreach($specieslist as $speciesone) {
 			$thumbnail = '';
 			foreach($speciesone->speciesphotos as $speciesphoto) {
 				$thumbnail = $speciesphoto->ThumbnailLocation;

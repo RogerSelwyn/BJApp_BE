@@ -58,9 +58,61 @@ class LocationController extends Controller
     public function show($id)
     {
         //  GET  /location/1
-        return Location::where('id',$id)
-			->with('Species')
+        $location = Location::where('id',$id)
 			->first();
+        $locationspecies = Location::where('id',$id)
+			->first()
+			->species()
+			->with(array('speciesphotos' => function($query) {
+				$query->where('IsDefault', 1);
+				}))
+			->get();
+			
+		$species = [];
+		foreach($locationspecies as $speciesone) {
+			$thumbnail = '';
+			foreach($speciesone->speciesphotos as $speciesphoto) {
+				$thumbnail = $speciesphoto->ThumbnailLocation;
+			};	
+			if ($thumbnail != '') {
+				$species[] = [
+					'id' 		 		=> $speciesone->id,
+					'CommonName' 		=> $speciesone->CommonName,
+					'LatinName' 		=> $speciesone->LatinName,
+					'AliasName' 		=> $speciesone->AliasName,
+					'Gender'	 		=> $speciesone->Gender,
+					'Colouring' 		=> $speciesone->Colouring,
+					'MigratoryPattern' 	=> $speciesone->MigratoryPattern,
+					'Description' 		=> $speciesone->Description,
+					'ThumbnailLocation' => $thumbnail,
+				];
+			} else{
+				$species[] = [
+					'id' 		 		=> $speciesone->id,
+					'CommonName' 		=> $speciesone->CommonName,
+					'LatinName' 		=> $speciesone->LatinName,
+					'AliasName' 		=> $speciesone->AliasName,
+					'Gender'	 		=> $speciesone->Gender,
+					'Colouring' 		=> $speciesone->Colouring,
+					'MigratoryPattern' 	=> $speciesone->MigratoryPattern,
+					'Description' 		=> $speciesone->Description,
+				];
+			};
+		};	
+		$locationout = [
+			'id'				=> $location->id,
+			'RegionId'			=> $location->RegionId,
+			'LocationName'		=> $location->LocationName,
+			'Address'			=> $location->Address,
+			'County'			=> $location->County,
+			'Postcode'			=> $location->Postcode,
+			'Country'			=> $location->Country,
+			'Description'		=> $location->Description,
+			'Latitude'			=> $location->Latitude,
+			'Longitude' 		=> $location->Longitude,
+			'species'			=> $species,
+		];
+		return $locationout;
     }
 
     /**
