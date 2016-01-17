@@ -8,7 +8,7 @@ class Species extends Model
 {
     protected $table = 'species';
     protected $primaryKey = 'id';
-    protected $fillable = array('SpeciesTypeId', 'CommonName', 'LatinName', 'AliasName', 'Gender', 'Colouring', 'MigratoryPattern', 'Description');
+    protected $fillable = array('SpeciesTypeId', 'CommonName', 'LatinName', 'AliasName', 'Gender', 'Colouring', 'MigratoryPattern', 'Description', 'LocationDescription', 'SpecialistInformation');
 
 
 // DEFINE RELATIONSHIPS ------------------

@@ -76,26 +76,30 @@ class LocationController extends Controller
 			};	
 			if ($thumbnail != '') {
 				$species[] = [
-					'id' 		 		=> $speciesone->id,
-					'CommonName' 		=> $speciesone->CommonName,
-					'LatinName' 		=> $speciesone->LatinName,
-					'AliasName' 		=> $speciesone->AliasName,
-					'Gender'	 		=> $speciesone->Gender,
-					'Colouring' 		=> $speciesone->Colouring,
-					'MigratoryPattern' 	=> $speciesone->MigratoryPattern,
-					'Description' 		=> $speciesone->Description,
-					'ThumbnailLocation' => $thumbnail,
+					'id' 		 			=> $speciesone->id,
+					'CommonName' 			=> $speciesone->CommonName,
+					'LatinName' 			=> $speciesone->LatinName,
+					'AliasName' 			=> $speciesone->AliasName,
+					'Gender'	 			=> $speciesone->Gender,
+					'Colouring' 			=> $speciesone->Colouring,
+					'MigratoryPattern' 		=> $speciesone->MigratoryPattern,
+					'Description' 			=> $speciesone->Description,
+					'LocationDescription' 	=> $speciesone->LocationDescription,
+					'SpecialistInformation'	=> $speciesone->SpecialistInformation,
+					'ThumbnailLocation' 	=> $thumbnail,
 				];
 			} else{
 				$species[] = [
-					'id' 		 		=> $speciesone->id,
-					'CommonName' 		=> $speciesone->CommonName,
-					'LatinName' 		=> $speciesone->LatinName,
-					'AliasName' 		=> $speciesone->AliasName,
-					'Gender'	 		=> $speciesone->Gender,
-					'Colouring' 		=> $speciesone->Colouring,
-					'MigratoryPattern' 	=> $speciesone->MigratoryPattern,
-					'Description' 		=> $speciesone->Description,
+					'id' 		 			=> $speciesone->id,
+					'CommonName' 			=> $speciesone->CommonName,
+					'LatinName' 			=> $speciesone->LatinName,
+					'AliasName' 			=> $speciesone->AliasName,
+					'Gender'	 			=> $speciesone->Gender,
+					'Colouring' 			=> $speciesone->Colouring,
+					'MigratoryPattern' 		=> $speciesone->MigratoryPattern,
+					'Description' 			=> $speciesone->Description,
+					'LocationDescription' 	=> $speciesone->LocationDescription,
+					'SpecialistInformation'	=> $speciesone->SpecialistInformation,
 				];
 			};
 		};	
