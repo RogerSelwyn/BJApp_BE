@@ -99,17 +99,19 @@ class SpeciesController extends Controller
 		};
 		
 		$speciesone = [
-			'id'				=> $species->id,
-			'SpeciesTypeId'		=> $species->SpeciesTypeId,
-			'CommonName'		=> $species->CommonName,
-			'LatinName'			=> $species->LatinName,
-			'AliasName'			=> $species->AliasName,
-			'Gender'			=> $species->Gender,
-			'Colouring'			=> $species->Colouring,
-			'MigratoryPattern'	=> $species->MigratoryPattern,
-			'Description'		=> $species->Description,
-			'regions'			=> $regions,
-			'speciesphotos'		=> $species->speciesphotos,
+			'id'					=> $species->id,
+			'SpeciesTypeId'			=> $species->SpeciesTypeId,
+			'CommonName'			=> $species->CommonName,
+			'LatinName'				=> $species->LatinName,
+			'AliasName'				=> $species->AliasName,
+			'Gender'				=> $species->Gender,
+			'Colouring'				=> $species->Colouring,
+			'MigratoryPattern'		=> $species->MigratoryPattern,
+			'Description'			=> $species->Description,
+			'LocationDescription'	=> $species->LocationDescription,
+			'SpecialistInformation'	=> $species->SpecialistInformation,
+			'regions'				=> $regions,
+			'speciesphotos'			=> $species->speciesphotos,
 		];
 		return $speciesone;
     }
