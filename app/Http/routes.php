@@ -21,3 +21,4 @@ Route::resource('location', 'LocationController');
 Route::resource('specieslocation', 'SpeciesLocationController');
 Route::resource('speciesphoto', 'SpeciesPhotoController');
 Route::resource('postcodesearch', 'PostcodeSearchController');
+Route::resource('setting', 'SettingController');
