@@ -114,6 +114,8 @@ class LocationController extends Controller
 			'Description'		=> $location->Description,
 			'Latitude'			=> $location->Latitude,
 			'Longitude' 		=> $location->Longitude,
+			'ThumbnailLocation'	=> $location->ThumbnailLocation,
+			'PhotoLocation'		=> $location->PhotoLocation,
 			'species'			=> $species,
 		];
 		return $locationout;
