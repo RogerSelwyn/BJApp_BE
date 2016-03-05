@@ -73,6 +73,7 @@ class LocationController extends Controller
 			$thumbnail = '';
 			foreach($speciesone->speciesphotos as $speciesphoto) {
 				$thumbnail = $speciesphoto->ThumbnailLocation;
+				$photo = $speciesphoto->PhotoLocation;
 			};	
 			if ($thumbnail != '') {
 				$species[] = [
@@ -87,6 +88,7 @@ class LocationController extends Controller
 					'LocationDescription' 	=> $speciesone->LocationDescription,
 					'SpecialistInformation'	=> $speciesone->SpecialistInformation,
 					'ThumbnailLocation' 	=> $thumbnail,
+					'PhotoLocation' 		=> $photo,
 				];
 			} else{
 				$species[] = [
