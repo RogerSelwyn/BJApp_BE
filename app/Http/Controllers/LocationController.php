@@ -63,6 +63,7 @@ class LocationController extends Controller
         $locationspecies = Location::where('id',$id)
 			->first()
 			->species()
+			->orderBy('CommonName','asc')
 			->with(array('speciesphotos' => function($query) {
 				$query->where('IsDefault', 1);
 				}))

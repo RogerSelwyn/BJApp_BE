@@ -63,6 +63,7 @@ class SpeciesTypeController extends Controller
         $specieslist = SpeciesType::where('id',$id)
 			->first()
 			->species()
+			->orderBy('CommonName','asc')
 			->with(array('speciesphotos' => function($query) {
 				$query->where('IsDefault', 1);
 				}))
