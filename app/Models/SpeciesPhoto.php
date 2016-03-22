@@ -8,7 +8,7 @@ class SpeciesPhoto extends Model
 {
     protected $table = 'speciesphotos';
     protected $primaryKey = 'id';
-    protected $fillable = array('SpeciesId', 'ThumbnailLocation', 'PhotoLocation', 'Description');
+    protected $fillable = array('SpeciesId', 'ThumbnailLocation', 'PhotoLocation', 'Description', 'OriginalLocation');
 
 // DEFINE RELATIONSHIPS ------------------
     public function species() {
