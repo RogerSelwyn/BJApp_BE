@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::resource('species', 'SpeciesController');
 Route::resource('speciestype', 'SpeciesTypeController');
 Route::resource('location', 'LocationController');
+Route::resource('region', 'RegionController');
 Route::resource('specieslocation', 'SpeciesLocationController');
 Route::resource('speciesphoto', 'SpeciesPhotoController');
 Route::resource('postcodesearch', 'PostcodeSearchController');
