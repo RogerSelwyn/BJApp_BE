@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFieldsToSpeciesPhoto2Table extends Migration
+class AddFieldsToSpeciesPhotoTable extends Migration
 {
     /**
      * Run the migrations.
