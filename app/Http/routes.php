@@ -11,9 +11,6 @@
 |
 */
 // CORS
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Credentials: true');
-
 Route::get('/', function () {
     return view('welcome');
 });
