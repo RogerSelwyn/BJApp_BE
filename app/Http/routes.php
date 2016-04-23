@@ -11,7 +11,7 @@
 |
 */
 // CORS
-header('Access-Control-Allow-Origin: http://myclient.com');
+header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Credentials: true');
 
 //All routes below
