@@ -8,7 +8,7 @@ class Location extends Model
 {
     protected $table = 'locations';
     protected $primaryKey = 'id';
-    protected $fillable = array('LocationName', 'County', 'Country', 'Address', 'Description', 'Latitude', 'Longitude', 'ThumbnailLocation', 'PhotoLocation');
+    protected $fillable = array('LocationName', 'County', 'Country', 'Address', 'Description', 'Latitude', 'Longitude', 'ThumbnailLocation', 'PhotoLocation', 'OriginalLocation');
 
 // DEFINE RELATIONSHIPS ------------------
     public function species() {
