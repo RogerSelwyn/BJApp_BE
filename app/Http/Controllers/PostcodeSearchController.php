@@ -19,7 +19,8 @@ class PostcodeSearchController extends Controller
     public function index()
     {
         // GET  /location  (just sending indexes for related tables)
-        return Location::all();
+        return Location::orderBy('LocationName','asc')
+			->get();
 		
     }
 
