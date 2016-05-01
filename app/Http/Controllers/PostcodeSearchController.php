@@ -59,6 +59,7 @@ class PostcodeSearchController extends Controller
     {
         //  GET  /location/1
         return Location::where('postcode', 'LIKE', "%$searchstr%")
+			->orderBy('LocationName','asc')
 			->get();
     }
 
