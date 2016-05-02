@@ -74,7 +74,8 @@ class LocationController extends Controller
 			$thumbnail = '';
 			foreach($speciesone->speciesphotos as $speciesphoto) {
 				$thumbnail = $speciesphoto->ThumbnailLocation;
-				$photo = $speciesphoto->PhotoLocation;
+				$mediumphoto = $speciesphoto->MediumPhotoLocation;
+				$largephoto = $speciesphoto->LargePhotoLocation;
 			};	
 			if ($thumbnail != '') {
 				$species[] = [
@@ -89,7 +90,8 @@ class LocationController extends Controller
 					'LocationDescription' 	=> $speciesone->LocationDescription,
 					'SpecialistInformation'	=> $speciesone->SpecialistInformation,
 					'ThumbnailLocation' 	=> $thumbnail,
-					'PhotoLocation' 		=> $photo,
+					'MediumPhotoLocation' 	=> $mediumphoto,
+					'LargePhotoLocation' 	=> $largephoto,
 				];
 			} else{
 				$species[] = [
@@ -107,20 +109,21 @@ class LocationController extends Controller
 			};
 		};	
 		$locationout = [
-			'id'				=> $location->id,
-			'RegionId'			=> $location->RegionId,
-			'LocationName'		=> $location->LocationName,
-			'Address'			=> $location->Address,
-			'County'			=> $location->County,
-			'Postcode'			=> $location->Postcode,
-			'Country'			=> $location->Country,
-			'Description'		=> $location->Description,
-			'Latitude'			=> $location->Latitude,
-			'Longitude' 		=> $location->Longitude,
-			'ThumbnailLocation'	=> $location->ThumbnailLocation,
-			'PhotoLocation'		=> $location->PhotoLocation,
-			'OriginalLocation'	=> $location->OriginalLocation,
-			'species'			=> $species,
+			'id'					=> $location->id,
+			'RegionId'				=> $location->RegionId,
+			'LocationName'			=> $location->LocationName,
+			'Address'				=> $location->Address,
+			'County'				=> $location->County,
+			'Postcode'				=> $location->Postcode,
+			'Country'				=> $location->Country,
+			'Description'			=> $location->Description,
+			'Latitude'				=> $location->Latitude,
+			'Longitude'		 		=> $location->Longitude,
+			'ThumbnailLocation'		=> $location->ThumbnailLocation,
+			'MediumPhotoLocation'	=> $location->MediumPhotoLocation,
+			'LargePhotoLocation'	=> $location->LargePhotoLocation,
+			'OriginalLocation'		=> $location->OriginalLocation,
+			'species'				=> $species,
 		];
 		return $locationout;
     }
