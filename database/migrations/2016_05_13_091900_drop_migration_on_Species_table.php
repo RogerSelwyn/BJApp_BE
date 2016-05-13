@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class RenameMigrationOnSpeciesTable extends Migration
+class DropMigrationOnSpeciesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class RenameMigrationOnSpeciesTable extends Migration
     public function up()
     {
         Schema::table('Species', function ($table) {
-            $table->renameColumn('MigratoryPattern', 'MigratoryPatternOld');
+            $table->dropColumn('MigratoryPattern');
         });
     }
 
