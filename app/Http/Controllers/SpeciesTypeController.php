@@ -76,7 +76,7 @@ class SpeciesTypeController extends Controller
 			foreach($speciesone->speciesphotos as $speciesphoto) {
 				$thumbnail = $speciesphoto->ThumbnailLocation;
 				$mediumphoto = $speciesphoto->MediumPhotoLocation;
-				$largephoto = $speciesphoto->LargehotoLocation;
+				$largephoto = $speciesphoto->LargePhotoLocation;
 			};	
 			if ($thumbnail != '') {
 				$species[] = [
