@@ -17,7 +17,7 @@ class Species extends Model
     }
 
     public function speciesphotos() {
-        return $this->hasMany('App\Models\SpeciesPhoto','SpeciesId'); 
+        return $this->hasMany('App\Models\SpeciesPhoto','SpeciesId')->orderBy('IsDefault');; 
     }
 
     public function locations() {
